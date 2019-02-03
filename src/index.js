@@ -7,8 +7,6 @@ import styled from 'styled-components';
 import App from './components/App';
 import reducer from './reducers/index';
 
-import './text.css'
-
 const store = createStore(reducer);
 
 const Wrapper = styled.div`

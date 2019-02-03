@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Image from './Styled/Image';
+import Image from './Image';
 import Rocket from '../images/rocket.png';
 
 const Header = () => {
