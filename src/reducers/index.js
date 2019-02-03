@@ -1,11 +1,8 @@
-import { DEFAULT_PROGRESS } from '../constants';
-
 const defaultState = {
   email: '',
   name: '',
   isFetching: false,
   activeTab: 'BAR_CURL',
-  progress: DEFAULT_PROGRESS,
   listEnabled: false,
   isMenuOpen: false
 };
@@ -27,8 +24,6 @@ const reducer = (state = defaultState, action) => {
       return { ...state, email: action.email };
     case 'SET_NAME':
       return { ...state, name: action.name };
-    case 'SET_PROGRESS':
-      return { ...state, progress: action.progress };
     case 'CHANGE_ACTIVE_TAB':
       return { ...state, activeTab: action.tab };
     case 'SAVE_WEIGHT':

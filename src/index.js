@@ -2,27 +2,26 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
 import App from './components/App';
 import reducer from './reducers/index';
-import { theme } from './constants';
+
+import './text.css'
 
 const store = createStore(reducer);
 
 const Wrapper = styled.div`
-  font-family: ${props => props.theme.fontFamily};
-  font-size: ${props => props.theme.fontSize};
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 30px;
   text-align: center;
 `;
 
 render(
-  <ThemeProvider theme={theme}>
-    <Wrapper>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </Wrapper>
-  </ThemeProvider>,
+  <Wrapper>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Wrapper>,
   document.getElementById('app')
 );

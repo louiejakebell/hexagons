@@ -1,13 +1,21 @@
 import React from 'react';
 
 import Header from './Header';
-import ProgressDisplay from './ProgressDisplay';
+import Hexagons from './Hexagons';
+
+const resources = [
+  { type: 'Book' },
+  { type: 'Online Course' },
+  { type: 'Article' },
+  { type: 'Mentor' },
+  { type: 'Course' }
+];
 
 const App = () => {
   return (
     <div>
       <Header />
-      <ProgressDisplay />
+      <Hexagons resources={resources} />
     </div>
   );
 };
