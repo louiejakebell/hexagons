@@ -28,22 +28,22 @@ const getTopPixels = (i) => {
 };
 
 const getLeftPixels = (i) => {
-  const base = 100;
+  const base = 50;
   
   if (i == 0 || i == 4 || i == 8) {
-    return '50px';
+    return `${base}px`;
   }
 
   if (i == 1 || i == 5 || i == 9) {
-    return '250px';
+    return `${base + 200}px`;
   }
 
   if (i == 2 || i == 6 || i == 10) {
-    return '150px';
+    return `${base + 100}px`;
   }
 
   if (i == 3 || i == 7 || i == 11) {
-    return '350px';
+    return `${base + 300}px`;
   }
 }
 

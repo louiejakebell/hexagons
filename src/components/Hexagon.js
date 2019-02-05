@@ -4,9 +4,10 @@ const Hexagon = styled.div`
   width: 200px;
   height: 110px;
   background: ${props => props.active ? `red` : props.background};
-  position: absolute;
-  left: ${props => props.left};
-  top: ${props => props.top};
+  position: relative;
+  display: inline-block;
+  // left: ${props => props.left};
+  // top: ${props => props.top};
   text-align: center;
   vertical-align: middle;
   line-height: 100px;
