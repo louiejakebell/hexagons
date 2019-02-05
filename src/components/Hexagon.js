@@ -4,14 +4,13 @@ const Hexagon = styled.div`
   width: 200px;
   height: 110px;
   background: ${props => props.active ? `red` : props.background};
-  position: relative;
-  left: 50px;
-  top: 50px;
+  position: absolute;
+  left: ${props => props.left};
+  top: ${props => props.top};
   text-align: center;
   vertical-align: middle;
   line-height: 100px;
   color: white;
-  border: 1px solid white;
 
   &:hover {
     opacity: 0.5;
