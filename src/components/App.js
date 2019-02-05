@@ -13,7 +13,7 @@ const resources = [
   { type: 'Video', background: '#808000' },
   { type: 'Article', background: '#2d3436' },
   { type: 'Book', background: '#40E0D0' },
-  { type: 'Online Course', background: '#2d3436' },
+  // { type: 'Online Course', background: '#2d3436' },
   // { type: 'Video', background: '#e84393' },
   // { type: 'Article', background: '#2d3436' },
   // { type: 'Video', background: '#006400' },
