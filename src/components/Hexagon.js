@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const Hexagon = styled.div`
   width: 200px;
   height: 110px;
-  background: ${props => props.active ? `red` : props.background};
+  background: ${props => props.background};
+  opacity: ${props => props.active ? '0.2' : '1'};
   position: relative;
   left: ${props => props.left};
   top: ${props => props.top};
@@ -23,7 +24,7 @@ const Hexagon = styled.div`
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom: 50px solid ${props => props.active ? `red` : props.background};
+    border-bottom: 50px solid ${props => props.background};
   }
 
   &:after {
@@ -35,7 +36,7 @@ const Hexagon = styled.div`
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-top: 50px solid ${props => props.active ? `red` : props.background};
+    border-top: 50px solid ${props => props.background};
   }
 `;
 
