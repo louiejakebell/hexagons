@@ -15,13 +15,24 @@ const GridLayout = styled.div`
 `;
 
 const getTopPixels = (i) => {
-  if (3 <= i && i <= 5) { return '50px' };
-  if (6 <= i && i <= 9) { return '100px' };
+  if (3 <= i && i <= 5) {
+    return '50px'
+  };
+
+  if (6 <= i && i <= 9) {
+    return '100px'
+  };
 
   return '0px';
 };
 
-const backgrounds = ['#F4A460', '#0984e3', '#55efc4', '#e84393', '#2d3436', '#F4A460', '#2d3436', '#55efc4', '#F4A460'];
+const getLeftPixels = (i) => {
+  if (i === 3 || i === 4 || i === 5 || i === 9) {
+    return '100px'
+  };
+
+  return '0px';
+}
 
 const Grid = ({ resources }) => {
   const [activeHexagon, setActiveHexagon] = useState();
@@ -32,7 +43,6 @@ const Grid = ({ resources }) => {
         const type = resources[i].type;
         const background = resources[i].background;
         const active = type === activeHexagon;
-        const left = (i === 3 || i === 4 || i === 5 || i === 9) ? '100px' : '0px';
 
         return (
           <Hexagon
@@ -40,7 +50,7 @@ const Grid = ({ resources }) => {
             active={active}
             onClick={() => setActiveHexagon(type)}
             key={i}
-            left={left}
+            left={getLeftPixels(i)}
             top={getTopPixels(i)}>
             {type}
           </Hexagon>
