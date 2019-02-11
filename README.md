@@ -1,3 +1,3 @@
-# gypla 💪
+# hexagons 💪
 
-gym planning serverless web app (react, redux, react-vis, styled-components, webpack, mongodb, netlify-lambda, netlify-identity-widget)
+experimentation w/ display hexagons in a grid including hover & active states (react & styled-components).
