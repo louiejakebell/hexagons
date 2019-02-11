@@ -4,7 +4,7 @@ const Hexagon = styled.div`
   width: 200px;
   height: 110px;
   background: ${props => props.background};
-  opacity: ${props => props.active ? '0.2' : '1'};
+  opacity: ${props => props.active ? '0.3' : '1'};
   position: relative;
   left: ${props => props.left};
   top: ${props => props.top};
