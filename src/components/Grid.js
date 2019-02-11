@@ -1,51 +1,27 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
-import GridLayout from './GridLayout';
 import Hexagon from './Hexagon';
 
+const GridLayout = styled.div`
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 700px;
+`;
+
 const getTopPixels = (i) => {
-  const base = 100;
+  if (3 <= i && i <= 5) { return '50px' };
+  if (6 <= i && i <= 9) { return '100px' };
 
-  if (i == 0 || i == 1) {
-    return `${base}px`;
-  }
-
-  if (i == 2 || i == 3) {
-    return `${base + 160}px`;
-  }
-
-  if (i == 4 || i == 5) {
-    return `${base + 320}px`;
-  }
-
-  if (i == 6 || i == 7) {
-    return `${base + 480}px`;
-  }
-
-  if (i == 8 || i == 9) {
-    return `${base + 640}px`;
-  }
+  return '0px';
 };
 
-const getLeftPixels = (i) => {
-  const base = 100;
-  
-  if (i == 0 || i == 4 || i == 8) {
-    return '50px';
-  }
-
-  if (i == 1 || i == 5 || i == 9) {
-    return '250px';
-  }
-
-  if (i == 2 || i == 6 || i == 10) {
-    return '150px';
-  }
-
-  if (i == 3 || i == 7 || i == 11) {
-    return '350px';
-  }
-}
+const backgrounds = ['#F4A460', '#0984e3', '#55efc4', '#e84393', '#2d3436', '#F4A460', '#2d3436', '#55efc4', '#F4A460'];
 
 const Grid = ({ resources }) => {
   const [activeHexagon, setActiveHexagon] = useState();
@@ -53,9 +29,10 @@ const Grid = ({ resources }) => {
   return (
     <GridLayout>
       {resources.map((entry, i) => {
-        const background = resources[i].background;
         const type = resources[i].type;
+        const background = resources[i].background;
         const active = type === activeHexagon;
+        const left = (i === 3 || i === 4 || i === 5 || i === 9) ? '100px' : '0px';
 
         return (
           <Hexagon
@@ -63,8 +40,7 @@ const Grid = ({ resources }) => {
             active={active}
             onClick={() => setActiveHexagon(type)}
             key={i}
-            number={i}
-            left={getLeftPixels(i)}
+            left={left}
             top={getTopPixels(i)}>
             {type}
           </Hexagon>
