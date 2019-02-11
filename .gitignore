@@ -8,7 +8,6 @@
 /build
 /dist
 /functions
-gypla.tar
 
 # misc
 .DS_Store
